@@ -3,6 +3,7 @@
 \input{../../preamble_files/packages}
 \input{../../preamble_files/figures}
 \input{../../preamble_files/references}
+\input{../../preamble_files/shortcuts}
 
 \pagestyle{fancy}
 \lhead{Richard Whitehill}

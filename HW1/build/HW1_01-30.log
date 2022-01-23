@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.23)  23 JAN 2022 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.23)  23 JAN 2022 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -198,6 +198,8 @@ Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 Repo/preamble_files/figures)
 (/home/rwhitehill/Documents/WSU_Classes/Spring2022/Fund_Algebra/FundAlgebra_Git
 Repo/preamble_files/references)
+(/home/rwhitehill/Documents/WSU_Classes/Spring2022/Fund_Algebra/FundAlgebra_Git
+Repo/preamble_files/shortcuts)
 (/home/rwhitehill/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.d
 ef
 File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
@@ -208,20 +210,20 @@ File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
 Repo/HW1/build/HW1_01-30.aux)
 \openout1 = `HW1_01-30.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -281,7 +283,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 18.
+(lastpage)             ! on input line 19.
  
 AED: lastpage setting LastPage
 
@@ -298,10 +300,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (/home/rwhitehill/Documents/WSU_Classes/Spring2022/Fund_Algebra/FundAlgebra_Git
 Repo/HW1/build/HW1_01-30.aux) ) 
 Here is how much of TeX's memory you used:
- 3260 strings out of 480781
- 50475 string characters out of 2899559
- 354360 words of memory out of 3000000
- 20918 multiletter control sequences out of 15000+600000
+ 3266 strings out of 480781
+ 50773 string characters out of 2899559
+ 354434 words of memory out of 3000000
+ 20921 multiletter control sequences out of 15000+600000
  403728 words of font info for 28 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  62i,11n,69p,267b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
