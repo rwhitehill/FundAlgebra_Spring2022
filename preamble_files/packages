@@ -2,7 +2,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage{dsfonts}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{float}

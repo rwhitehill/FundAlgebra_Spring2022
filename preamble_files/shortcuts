@@ -1,4 +1,4 @@
 \newcommand{\id}{\mathds{1}}
-\newcommand{\integers}{\mathds{Z}}
-\newcommand{\reals}{\mathds{R}}
-\newcommand{\naturals}{\mathds{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
