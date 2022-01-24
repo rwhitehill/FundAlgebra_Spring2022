@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
-\usepackage{dsfonts}
+\usepackage{dsfont}
 \usepackage{mathtools}
 \usepackage{graphicx}
 \usepackage{float}
