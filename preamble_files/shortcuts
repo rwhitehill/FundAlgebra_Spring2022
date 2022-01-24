@@ -1,1 +1,4 @@
-\newcommand{\map}[3]{#1: #2 \rightarrow #3}
+\newcommand{\id}{\mathds{1}}
+\newcommand{\integers}{\mathds{Z}}
+\newcommand{\reals}{\mathds{R}}
+\newcommand{\naturals}{\mathds{N}}

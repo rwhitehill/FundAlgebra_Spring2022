@@ -7,18 +7,103 @@
 
 \pagestyle{fancy}
 \lhead{Richard Whitehill}
-\chead{MATH 513 -- HW \#}
+\chead{MATH 513 -- HW 1}
 \rhead{DATE}
 \cfoot{\thepage ~of~\pageref{LastPage}}
 
 \newcommand{\prob}[2]{\textbf{#1)} #2}
+\newenvironment{proof}{\textbf{\underline{Proof}} \\}{\begin{flushright}$\blacksquare$\end{flushright}}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0pt}
 
 \begin{document}
 
-Text goes here.
+\prob{1}{Let $f: A \rightarrow B$ be a map.} 
 
+(a) $f$ is injective iff $f$ has a left inverse.
+
+\begin{proof}
+($\Leftarrow$) Suppose $g: B \rightarrow A$ is a left inversee of $f$ and that $f(a) = f(b)$. Then, $g \circ f(a) = g \circ f(b)$ or $g(f(a)) = g(f(b))$ or $a = b$. Hence, $f$ is injective.
+
+($\Rightarrow$) Suppose $f$ is injective. Consider a function $g: B \rightarrow A$ constructed as follows. Let $c$ be an arbitrary point in $A$. If $y \in f(A)$, then let $g(y) = x$ such that $f(x) = y$. We know that $x$ is unique since $f$ is injective. If $y \not\in f(A)$ but $y \in B$, let $g(y) = c$. Thus, we observe that $g$ is a left inverse by construction.
+\end{proof}
+
+(b) $f$ is surjective iff $f$ has a right inverse.
+
+\begin{proof}
+($\Leftarrow$) Let $h: B \rightarrow A$ be a right inverse of $f$. Then for each $b \in B$, we have $f \circ h(b) = b$. hence $f$ is surjective since each $b \in B$ has a pre-imgae $h(b) \in A$.
+
+($\Rightarrow$) Let $f$ be surjective. Consider a function $h: B \rightarrow A$ constructed as follows. Note that for each $b \in B$, there exists an element $a \in A$ such that $f(a) = b$. let $h(b) = a$. Then by construction $f \circ h(b) = f(a) = b$. Hence $h$ is a right inverse of $f$. 
+\end{proof}
+
+(c) $f$ is bijective iff there exists $g: B \rightarrow A$ such that $g \circ f = \id_{A}$ and $f \circ g = \id_{B}$.
+
+\begin{proof}
+($\Leftarrow$) Let $g: B \rightarrow A$ be defined as above. Then $g$ is a left inverse of $f$, meaning $f$ is injective, and similarly $g$ is a right inverse of $f$, implying $f$ is surjective. Thus, $f$ is bijective.
+
+($\Rightarrow$) Let $f$ be bijective. Then $\exists g: B \rightarrow A, g \circ f = \id_{A}$ and $\exists h: B \rightarrow A, f \circ h = id_{B}$. Suppose $g \not= h$. Then $\exists b \in B$ such that $g(b) \not= h(b)$. This is impossible, however, since  each pre-image is unique, given that $f$ is injective. Hence it must be the case that $g: B \rightarrow A$ is a unique inverse such that $g \circ f = \id_{A}$ and $f \circ g = \id_{B}$.
+\end{proof}
+
+\prob{2}{Let $f: A \rightarrow B$, $g: B \rightarrow C$ be maps.}
+
+(a) If $f,g$ are injective, then so is $g \circ f$.
+
+\begin{proof}
+Suppose $g \circ f(a) = g \circ f(b)$. Then $g(f(a)) = g(f(b))$ or $f(a) = f(b)$ since $g$ is injective and $a = b$ since $f$ is injective, implying that $g \circ f$ is injective.
+\end{proof}
+
+(b) If $f,g$ are surjective, the so is $g \circ f$.
+
+\begin{proof}
+Notice that $f(A) = B$ and $g(B) = C$. Then $g \circ f(A) = g(f(A)) = g(B) = C$. Alternatively, let $z \in C$. Then $\exists y \in B, g(y) = z$. Similarly, $\exists x \in A, f(x) = y$. Hence, $g \circ f$ is surjective.
+\end{proof}
+
+(c) If $f,g \in {\rm Perm}(A)$, then $g \circ f \in {\rm Perm}(A)$.
+
+\begin{proof}
+Observe that $f,g: A \rightarrow A$ are bijective. So $g \circ f: A \rightarrow A$ is also bijective, meaning that $g \circ f \in {\rm Perm}(A)$.
+\end{proof} 
+
+\prob{3}{Let $f: A \rightarrow B$ be a surjective map. Prove that the relation $a \sim b$ iff $f(a) = f(b)$ is an equivalence relation whose equivalence classes are the fibers of $f$.}
+
+\begin{proof}
+Obviously $f(a) = f(a)$, so $a \sim a$, and similarly if $a \sim b$, then $b \sim a$ since $f(a) = f(b)$ is equivalent to $f(b) = f(a)$. Lastly if $a \sim b$ and $b \sim c$, then $a \sim c$ since $f(a) = f(b)$ and $f(b) = f(C)$ implies $f(a) = f(c)$.
+
+Choose any $b \in B$. Then $f^{-1}(\{b\}) = \{a \in A | f(a) = b\}$, which is the fiber of $f$ over $b$, is an equivalence class of $\sim$.
+\end{proof}
+
+\prob{4[1.2.10]}{Prove: Let $X,Y$ be sets, and let $f: X \rightarrow Y$ be a 1-to-1 and onto map. Then $f^{-1}: Y \rightarrow X$ is 1-to-1 and onto also. In particular, for a set $\Omega$, every $f \in {\rm Perm}(\Omega)$ has an inverse in ${\rm Perm}(\Omega)$. *}
+
+\begin{proof}
+Since $f$ is bijective, we know $f^{-1}$ exists and that $f \circ f^{-1} = \id_{Y}$ and $f^{-1} \circ f = \id_{X}$. Suppose that $f^{-1}(x_1) = f^{-1}(x_2)$, then $f \circ f^{-1}(x_1) = f \circ f^{-1}(x_2)$ or $x_1 = x_2$, implying $f^{-1}$ is 1-to-1. Now, let $x \in X$. Since $f$ is surjective, then there exists $y \in Y$ such that $f(x) = y$. Hence, $f \circ f^{-1}(x) = x = f^{-1}(y)$. That is, $f^{-1}$ is surjective.
+\end{proof}
+$\rightarrow$ If $f \in {\rm Perm}(\Omega)$, then $f$ is bijective so $f^{-1}$ exists and is bijective. Hence $f^{-1} \in {\rm Perm}(\Omega)$.
+
+\prob{5[1.2.12]}{Give an example of a map $f$ that has a left inverse, but not an inverse.}
+
+$\rightarrow$ Let $A = \{1,2,3\}$ and $B = \{1,2,3,4\}$. let $f: A \rightarrow B$ such that $f(1) = 2,~f(2)=3,~f(3)=4$. Notice that $g: B \rightarrow A$ such that $g(1)=1,~g(2)=1,~g(3)=2,~g(4)=3$ is a left inverse of $f$ since $g \circ f = \id_{A}$. Hoever, since $1 \in B$ has no pre-image, there is no way to define $f^{-1}: B \rightarrow A$ such that $f \circ f^{-1}(1) = 1$.
+
+\prob{6[1.2.20]}{Let $S$ be a set with a finite number of elements and let $f: S \rightarrow S$ be a map.}
+
+(a) If $f$ is onto, can $f$ not be 1-to-1?
+
+$\rightarrow$ Since $S$ is finite we can write $S = \{s_1,s_2,\hdots,s_n\}$. Suppose $f$ is not 1-to-1, then $\exists s_i, s_j \in S, i \not= j$ and $f(s_i) = f(s_j)$. Then, there can be at most $n-1$ images under $f$, meaning $f$ is not onto. Thus, if $f$ is onto, $f$ must be 1-to-1.
+
+(b) If $f$ is 1-to-1, can $f$ not be onto?
+
+$\rightarrow$ By similar reasoning as above $f$ must be onto. Suppose $f$ is not onto. Then $n$ elements in $S$ are mapped to $n-1$ elements in $S$, meaning $\exists s_i,s_j \ in S, i \not= j$ and $f(s_j) = f(s_j)$. Thus, $f$ is not 1-to-1. This implies that if $f$ is 1-to-1, it must be onto.
+
+(c) Do your conclusions remain valid even if $S$ has an infinite number of elements?
+
+$\rightarrow$ No, they do not. Consider $f: \naturals \rightarrow \naturals$ such that $f(n) = n+1$. Obviously $f$ is 1-to-1 but not onto. Consider also $f(n) = n/2$ if $n$ is even or $f(n) = (n+1)/2$ if $n$ is odd. Then, $f$ is onto but not 1-to-1.
+
+\prob{7[1.2.21]}{As usual let $(0,1) = \{x \in \reals | 0 < x < 1\}$. Can you find a 1-to-1 and onto map $f: (0,1) \rightarrow \reals$?}
+
+$\rightarrow$ Consider $f(x) = \frac{x-1/2}{x(x-1)}$.
+
+\prob{8[1.2.22]}{As usual let $[0,1) = (0,1)\cup\{0\}$ and $[0,1] = (0,1)\cup\{0,1\}$. Can you find a 1-to-1, onto function $f: [0,1) \rightarrow [0,1]$?}
+
+$\rightarrow$ Consider $f(x) = \begin{cases} 1/2^{n-1} & {\rm if~} x = 1/2^{n} {\rm ~for~some} n \in \naturals \\ x & {\rm otherwise}\end{cases}$.
 
 \end{document}
