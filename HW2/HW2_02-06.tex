@@ -12,6 +12,14 @@
 \cfoot{\thepage~of~\pageref{LastPage}}
 
 \newcommand{\prob}[2]{\textbf{#1)} #2}
+\newenvironment{proof}
+{
+\textbf{\underline{Proof}} \\
+}
+{
+\begin{flushright}
+$\blacksquare$
+\end{flushright}}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0pt}
@@ -53,28 +61,43 @@ Finally, we have $\lcm(11391,5673)\gcd(11391,5673) = 11391(5673)$ or $\lcm = 215
 
 \prob{2}{Determine the value of $\varphi(n)$ for each integer $n \leq 15$, where $\varphi(n)$ denotes the Euler-$\varphi$ function.} \\
 
-\begin{table}
-\begin{tabular}{|c|c|}
-$n$ & $\varphi(n)$ \\
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{|c|ccccccccccccccc|}
 \hline
-$n \leq 0$ & 0 \\
-1 & 
-2 &
-3 &
-4 &
-5 &
-6 &
-7 &
-8 &
-9 &
-10 &
-11 &
-12 &
-13 &
-14 &
-15 &
+$n$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \\
+\hline
+$\varphi(n)$ & 1 & 1 & 2 & 2 & 2 & 2 & 6 & 4 & 6 & 4 & 10 & 4 & 12 & 6 & 8 \\
+\hline
 \end{tabular}
+\end{center}
 \end{table}
+
+\prob{3}{Prove that if $p$ is prime, then $\sqrt{p}$ is not a rational number.} 
+
+\begin{proof}
+Suppose that $\sqrt{p}$ is a rational number. Then $\exists a,b \in \integers$ such that $\sqrt{p} = a/b$ and $\gcd(a,b) = 1$. That is, $a$ and $b$ are relatively prime and have no common factors. Thus, $a^2 = pb^2$, implying $p|a^2$. It follows then that $p|a$ or $a = px$ for some integer $x$. Hence, $a^2 = p^2x^2 = pb^2$ or $b^2 = px^2$, implying similarly that $p|b$. This is a contradiction, however, since we assumed that $\gcd(a,b) = 1$. We thus conclude that $\sqrt{p}$ is an irrational number.
+\end{proof}
+
+\prob{4}{Write down explicitly all the elements in the residue class of}
+
+(a) $\integers/8\integers$
+
+$\rightarrow$ $\integers/8\integers = \{0,1,2,3,4,5,6,7\}$
+
+(b) $\integers/10\integers$
+
+$\rightarrow$ $\integers/10\integers = \{0,1,2,3,4,5,6,7,8,9\}$
+
+(c) $\integers/18\integers$
+
+$\rightarrow$ $\integers/18\integers = \{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17\}$
+
+\prob{5}{Prove that there are infinitely many primes.}
+
+\begin{proof}
+Suppose that there are only a finite number of primes.
+\end{proof}
 
 
 

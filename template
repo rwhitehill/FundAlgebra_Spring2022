@@ -12,6 +12,14 @@
 \cfoot{\thepage~of~\pageref{LastPage}}
 
 \newcommand{\prob}[2]{\textbf{#1)} #2}
+\newenvironment{proof}
+{
+\textbf{\underline{Proof}} \\
+}
+{
+\begin{flushright}
+$\blacksquare$
+\end{flushright}}
 
 \setlength{\parskip}{\baselineskip}
 \setlength{\parindent}{0pt}
