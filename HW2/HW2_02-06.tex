@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{../preamble_files/packages}
+\input{../preamble_files/figures}
+\input{../preamble_files/references}
+\input{../preamble_files/shortcuts}
+
+\pagestyle{fancy}
+\lhead{Richard Whitehill}
+\chead{MATH 513 -- HW \#}
+\rhead{DATE}
+\cfoot{\thepage~of~\pageref{LastPage}}
+
+\newcommand{\prob}[2]{\textbf{#1)} #2}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\prob{1}{For each of the following pairs of integers $a$ and $b$, determine their greatest common divisor, their least common multiple, and write their greatest command divisor in the form $ax + by$ for some integers $x$ and $y$}
+
+(a) $a = 60$, $b = 17$
+
+Observe that,
+\begin{align*}
+60 &= 3(17) + 9 \\
+17 &= 1(9) + 8 \\
+9 &= 1(8) + 1 \\
+8 &= 8(1),
+\end{align*}
+so $\gcd(60,17) = 1$, and 
+\begin{align*}
+\gcd(60,17) &= 1 = 9 - (1*8) = 9 - (17 - 9) = 17 + 2(9) = -17 + 2(60 - 3*17) \\
+&= 60(2) + 17(-7).
+\end{align*}
+Finally, we have $\lcm(60,17)\gcd(60,17) = \lcm(60,17) = 60(17) = 1020$. 
+
+(b) $a = 11391$, $b = 5673$
+
+Notice that
+\begin{align*}
+11391 &= 2(5673) + 45 \\
+5673 &= 126(45) + 3 \\
+45 &= 15(3),
+\end{align*}
+so $\gcd(11391,5673) = 3$, and
+\begin{align*}
+\gcd(11391,5673) &= 5673 - 126(45) = 5673 - 126(11391 - 2*5673) \\
+&= 11391(-126) + 5673(253).
+\end{align*}
+Finally, we have $\lcm(11391,5673)\gcd(11391,5673) = 11391(5673)$ or $\lcm = 21540381$.
+
+\prob{2}{Determine the value of $\varphi(n)$ for each integer $n \leq 15$, where $\varphi(n)$ denotes the Euler-$\varphi$ function.} \\
+
+\begin{table}
+\begin{tabular}{|c|c|}
+$n$ & $\varphi(n)$ \\
+\hline
+$n \leq 0$ & 0 \\
+1 & 
+2 &
+3 &
+4 &
+5 &
+6 &
+7 &
+8 &
+9 &
+10 &
+11 &
+12 &
+13 &
+14 &
+15 &
+\end{tabular}
+\end{table}
+
+
+
+\end{document}
