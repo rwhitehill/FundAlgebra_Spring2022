@@ -80,10 +80,10 @@ Obviously $f(a) = f(a)$, so $a \sim a$, and similarly if $a \sim b$, then $b \si
 Choose any $b \in B$. Then $f^{-1}(\{b\}) = \{a \in A | f(a) = b\}$, which is the fiber of $f$ over $b$, is an equivalence class of $\sim$.
 \end{proof}
 
-\prob{4[1.2.10]}{Prove: Let $X,Y$ be sets, and let $f: X \rightarrow Y$ be a 1-to-1 and onto map. Then $f^{-1}: Y \rightarrow X$ is 1-to-1 and onto also. In particular, for a set $\Omega$, every $f \in {\rm Perm}(\Omega)$ has an inverse in ${\rm Perm}(\Omega)$. *}
+\prob{4[1.2.10]}{Prove: Let $X,Y$ be sets, and let $f: X \rightarrow Y$ be a 1-to-1 and onto map. Then $f^{-1}: Y \rightarrow X$ is 1-to-1 and onto also. In particular, for a set $\Omega$, every $f \in {\rm Perm}(\Omega)$ has an inverse in ${\rm Perm}(\Omega)$.}
 
 \begin{proof}
-Since $f$ is bijective, we know $f^{-1}$ exists and that $f \circ f^{-1} = \id_{Y}$ and $f^{-1} \circ f = \id_{X}$. Suppose that $f^{-1}(x_1) = f^{-1}(x_2)$, then $f \circ f^{-1}(x_1) = f \circ f^{-1}(x_2)$ or $x_1 = x_2$, implying $f^{-1}$ is 1-to-1. Now, let $x \in X$. Since $f$ is surjective, then there exists $y \in Y$ such that $f(x) = y$. Hence, $f \circ f^{-1}(x) = x = f^{-1}(y)$. That is, $f^{-1}$ is surjective.
+Since $f$ is bijective, we know $f^{-1}$ exists and that $f \circ f^{-1} = \id_{Y}$ and $f^{-1} \circ f = \id_{X}$. Suppose that $f^{-1}(x_1) = f^{-1}(x_2)$, then $f \circ f^{-1}(x_1) = f \circ f^{-1}(x_2)$ or $x_1 = x_2$, implying $f^{-1}$ is 1-to-1. Now, let $x \in X$ and $y \in Y$ such that $f(x) = y$. Hence, $f^{-1} \circ f(x) = x = f^{-1}(y)$. That is, $f^{-1}$ is surjective.
 \end{proof}
 $\rightarrow$ If $f \in {\rm Perm}(\Omega)$, then $f$ is bijective so $f^{-1}$ exists and is bijective. Hence $f^{-1} \in {\rm Perm}(\Omega)$.
 
@@ -107,10 +107,10 @@ $\rightarrow$ No, they do not. Consider $f: \naturals \rightarrow \naturals$ suc
 
 \prob{7[1.2.21]}{As usual let $(0,1) = \{x \in \reals | 0 < x < 1\}$. Can you find a 1-to-1 and onto map $f: (0,1) \rightarrow \reals$?}
 
-$\rightarrow$ Consider $f(x) = \frac{x-1/2}{x(x-1)}$.
+$\rightarrow$ Consider $f(x) = \frac{x-1/2}{x(x-1)}$. Since this function is monotonically decreasing and unbounded, it is one-to-one and onto.
 
 \prob{8[1.2.22]}{As usual let $[0,1) = (0,1)\cup\{0\}$ and $[0,1] = (0,1)\cup\{0,1\}$. Can you find a 1-to-1, onto function $f: [0,1) \rightarrow [0,1]$?}
 
-$\rightarrow$ Consider $f(x) = \begin{cases} 1/2^{n-1} & {\rm if~} x = 1/2^{n} {\rm ~for~some~} n \in \naturals \\ x & {\rm otherwise}\end{cases}$.
+$\rightarrow$ Consider $f(x) = \begin{cases} 1/2^{n-1} & {\rm if~} x = 1/2^{n} {\rm ~for~some~} n \in \naturals \\ x & {\rm otherwise}\end{cases}$. By construction, this function is 1-to-1 since we are simply ``shifting'' the set $\{1/2,1/4,\hdots\}$ to $\{1,1/2,\hdots\}$ while all other numbers map to themselves. 
 
 \end{document}
