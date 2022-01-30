@@ -8,7 +8,7 @@
 \pagestyle{fancy}
 \lhead{Richard Whitehill}
 \chead{MATH 513 -- HW 1}
-\rhead{DATE}
+\rhead{01/30/22}
 \cfoot{\thepage ~of~\pageref{LastPage}}
 
 \newcommand{\prob}[2]{\textbf{#1)} #2}
@@ -83,7 +83,7 @@ Choose any $b \in B$. Then $f^{-1}(\{b\}) = \{a \in A | f(a) = b\}$, which is th
 \prob{4[1.2.10]}{Prove: Let $X,Y$ be sets, and let $f: X \rightarrow Y$ be a 1-to-1 and onto map. Then $f^{-1}: Y \rightarrow X$ is 1-to-1 and onto also. In particular, for a set $\Omega$, every $f \in {\rm Perm}(\Omega)$ has an inverse in ${\rm Perm}(\Omega)$.}
 
 \begin{proof}
-Since $f$ is bijective, we know $f^{-1}$ exists and that $f \circ f^{-1} = \id_{Y}$ and $f^{-1} \circ f = \id_{X}$. Suppose that $f^{-1}(x_1) = f^{-1}(x_2)$, then $f \circ f^{-1}(x_1) = f \circ f^{-1}(x_2)$ or $x_1 = x_2$, implying $f^{-1}$ is 1-to-1. Now, let $x \in X$ and $y \in Y$ such that $f(x) = y$. Hence, $f^{-1} \circ f(x) = x = f^{-1}(y)$. That is, $f^{-1}$ is surjective.
+Since $f$ is bijective, we know $f^{-1}$ exists and that $f \circ f^{-1} = \id_{Y}$ and $f^{-1} \circ f = \id_{X}$. Suppose that $f^{-1}(x_1) = f^{-1}(x_2)$, then $f \circ f^{-1}(x_1) = f \circ f^{-1}(x_2)$ or $x_1 = x_2$, implying $f^{-1}$ is 1-to-1. Now, let $x \in X$ and $y \in Y$ such that $y = f(x)$. Hence, $f^{-1} \circ f(x) = x = f^{-1}(y)$. That is, $f^{-1}$ is surjective.
 \end{proof}
 $\rightarrow$ If $f \in {\rm Perm}(\Omega)$, then $f$ is bijective so $f^{-1}$ exists and is bijective. Hence $f^{-1} \in {\rm Perm}(\Omega)$.
 
