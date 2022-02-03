@@ -83,22 +83,67 @@ Suppose that $\sqrt{p}$ is a rational number. Then $\exists a,b \in \integers$ s
 
 (a) $\integers/8\integers$
 
-$\rightarrow$ $\integers/8\integers = \{0,1,2,3,4,5,6,7\}$
+$\rightarrow$ $\integers/8\integers = \{\bar{0},\bar{1},\bar{2},\bar{3},\bar{4},\bar{5},\bar{6},\bar{7}\}$
 
 (b) $\integers/10\integers$
 
-$\rightarrow$ $\integers/10\integers = \{0,1,2,3,4,5,6,7,8,9\}$
+$\rightarrow$ $\integers/10\integers = \{\bar{0},\bar{1},\bar{2},\bar{3},\bar{4},\bar{5},\bar{6},\bar{7},\bar{8},\bar{9}\}$
 
 (c) $\integers/18\integers$
 
-$\rightarrow$ $\integers/18\integers = \{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17\}$
+$\rightarrow$ $\integers/18\integers = \{\bar{0},\bar{1},\bar{2},\bar{3},\bar{4},\bar{5},\bar{6},\bar{7},\bar{8},\bar{9},\bar{10},\bar{11},\bar{12},\bar{13},\bar{14},\bar{15},\bar{16},\bar{17}\}$
 
 \prob{5}{Prove that there are infinitely many primes.}
 
 \begin{proof}
-Suppose that there are only a finite number of primes.
+Suppose that there are only a finite number of primes $p_1,\hdots,p_k$. Consider the following integer,
+\begin{align*}
+M = p_1\hdots p_i \hdots p_k + 1.
+\end{align*}
+By the Fundamental Theorem of Arithmetic, $M$ is a composite number, which is written as a product of primes. That is, $M$ is divisible by at least one prime number. Notice, though, that $\gcd(M,p_i) = 1$ since $M = p_i(p_1 \hdots p_k) + 1$ for each $i = 1,\hdots,k$. Hence, we have a contradiction since $M$ is relatively prime to each prime number, implying that the set of prime numbers is in fact not finite.
 \end{proof}
 
+\prob{6}{Prove that if $\bar{a}$, $\bar{b} \in (\integers/n\integers)^{\times}$, then $\bar{a} \cdot \bar{b} \in (\integers/n\integers)^{\times}$.}
+
+\begin{proof}
+Since $\bar{a}$, $\bar{b} \in (\integers/n\integers)^{\times}$, there exist $\bar{c},\bar{d} \in (\integers/n\integers)^{\times}$ such that $\bar{a} \cdot \bar{c} = \bar{b} \cdot \bar{d} = \bar{1}$. Consider then $bar{c} \cdot \bar{d}$. We have that $(\bar{a} \cdot \bar{b}) \cdot (\bar{c} \cdot \bar{d}) = (\bar{a} \cdot \bar{c}) \cdot (\bar{b} \cdot \bar{d}) = \bar{1} \cdot \bar{1} = \bar{1}$, implying that $\bar{a} \cdot \bar{b} \in (\integers/n\integers)^{\times}$.
+\end{proof}
+
+\prob{7[1.3.12]}{Let $n$, $m$, and $k$ all be positive integers. Assume that 
+\begin{align*}
+n | mk-1.
+\end{align*}
+Prove that $\gcd(n,m) = 1$.}
+
+\begin{proof}
+Notice that $ mk-1 = nl$ for some integer $l$. Hence, $1 = n(-l) + mk$. Since 1 is the least element in the positive integers and is an integer-linear combination of $n,m$, then $\gcd(n,m) = 1$.
+\end{proof}
+
+\prob{8[1.3.13]}{Let $a$, $b$, and $c$ be integers.}
+
+(a) Prove that if $\gcd(a,b) = 1$ and $a|bc$, then $a|c$.
+
+\begin{proof}
+Notice that $1 = ax+by$ and that $bc = an$ for some integers $x$, $y$, and $n$. Hence $byc = (1 - ax)c = c - acx = an$ or $c = a(cx + n)$, implying that $a|c$.
+\end{proof}
+
+(b) Prove that if $\gcd(a,b) = 1$ and $\gcd(a,c) = 1$, then $\gcd(a,bc) = 1$.
+
+\begin{proof}
+Observe that $1 = an + bm$ and $1 = ak + cl$ for some $n,m,k,l \in \integers$. Thus $bc(ml) = (1-an)(1-ak) = 1 - a(n + k - ank)$ or $1 = ax + by$ where $x,y \in \integers$, proving that $\gcd(a,bc) = 1$.
+\end{proof}
+
+\prob{9[1.3.16]}{Let $a$ and $b$ be positive integers. Let $a = p_1^{\alpha_1}p_2^{\alpha_2} \hdots p_k^{\alpha_k}$ and $b = p_1^{\beta_1}p_2^{\beta_2}\hdots p_k^{\beta_k}$ where $\alpha_i,\beta_i \geq 0$ and, for $1 \leq i \leq k$, $p_i$ are distinct primes. Show that $\gcd(a,b) = p_1^{\gamma_1}p_2^{\gamma_2}\hdots p_k^{\gamma_k}$, where $\gamma_i = \min(\alpha_i,\beta_i)$. In particular, $a$ and $b$ are relatively prime if and only if they do not have any common prime divisors.}
+
+\begin{proof}
+Main proof.
+
+If $a$ and $b$ are relatively prime, then $\gcd(a,b) = 1$ and $\gamma_i = 0$ for each $i$, meaning that $\alpha_i$ or $\beta_i$ is zero. Hence $a$ and $b$ share no common prime divisors. Now suppose that $a$ and $b$ share no common divisors, then for each $i$ we have that at least one of $\alpha_i$ or $\beta_i$ is zero, meaning that $\gamma_i = 0$ and $\gcd(a,b) = 1$, implying that $a$ and $b$ are relatively prime.
+\end{proof}
+
+\prob{10[1.3.18]}{Let $a$ and $b$ be positive integers. What can you say about the product of $\gcd(a,b)$ and $\lcm(a,b)$? By looking at some examples, make a conjecture. Can you prove your conjecture?}
+
+$\rightarrow$ 
 
 
 \end{document}
