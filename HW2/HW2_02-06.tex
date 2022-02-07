@@ -106,7 +106,7 @@ By the Fundamental Theorem of Arithmetic, $M$ is a composite number, which is wr
 \prob{6}{Prove that if $\bar{a}$, $\bar{b} \in (\integers/n\integers)^{\times}$, then $\bar{a} \cdot \bar{b} \in (\integers/n\integers)^{\times}$.}
 
 \begin{proof}
-Since $\bar{a}$, $\bar{b} \in (\integers/n\integers)^{\times}$, there exist $\bar{c},\bar{d} \in (\integers/n\integers)^{\times}$ such that $\bar{a} \cdot \bar{c} = \bar{b} \cdot \bar{d} = \bar{1}$. Consider then $bar{c} \cdot \bar{d}$. We have that $(\bar{a} \cdot \bar{b}) \cdot (\bar{c} \cdot \bar{d}) = (\bar{a} \cdot \bar{c}) \cdot (\bar{b} \cdot \bar{d}) = \bar{1} \cdot \bar{1} = \bar{1}$, implying that $\bar{a} \cdot \bar{b} \in (\integers/n\integers)^{\times}$.
+Since $\bar{a}$, $\bar{b} \in (\integers/n\integers)^{\times}$, there exist $\bar{c},\bar{d} \in (\integers/n\integers)^{\times}$ such that $\bar{a} \cdot \bar{c} = \bar{b} \cdot \bar{d} = \bar{1}$. Consider then $\bar{c} \cdot \bar{d}$. We have that $(\bar{a} \cdot \bar{b}) \cdot (\bar{c} \cdot \bar{d}) = (\bar{a} \cdot \bar{c}) \cdot (\bar{b} \cdot \bar{d}) = \bar{1} \cdot \bar{1} = \bar{1}$, implying that $\bar{a} \cdot \bar{b} \in (\integers/n\integers)^{\times}$.
 \end{proof}
 
 \prob{7[1.3.12]}{Let $n$, $m$, and $k$ all be positive integers. Assume that 
@@ -136,7 +136,7 @@ Observe that $1 = an + bm$ and $1 = ak + cl$ for some $n,m,k,l \in \integers$. T
 \prob{9[1.3.16]}{Let $a$ and $b$ be positive integers. Let $a = p_1^{\alpha_1}p_2^{\alpha_2} \hdots p_k^{\alpha_k}$ and $b = p_1^{\beta_1}p_2^{\beta_2}\hdots p_k^{\beta_k}$ where $\alpha_i,\beta_i \geq 0$ and, for $1 \leq i \leq k$, $p_i$ are distinct primes. Show that $\gcd(a,b) = p_1^{\gamma_1}p_2^{\gamma_2}\hdots p_k^{\gamma_k}$, where $\gamma_i = \min(\alpha_i,\beta_i)$. In particular, $a$ and $b$ are relatively prime if and only if they do not have any common prime divisors.}
 
 \begin{proof}
-Let $c = p_1^{\gamma_1}p_2^{\gamma_2}\hdots p_k^{\gamma_k}$. It is clear that $c|a$ and $c|b$ since $\gamma_i \leq \alpha_i,\beta_i$ for each $i$. We now prove that if $d|a$ and $d|b$ then $d|c$. Since $d|a$ and $d|b$, then it must be true that $d = p_1^{\delta_1}p_2^{\delta_2}\hdots p_k^{\delta_k}$, where $0 \leq \delta_i \leq \alpha_i,\beta_i$ for each $i$. Compare now $\delta_i$ and $\gamma_i = \min(\alpha_i,\beta_i)$. It is clear then that $\delta_i \leq \min(\alpha_i,\beta_i)$ for each $i$, so $d|c$ since $\gamma_i - \delta_i \geq 0$. Hence, $c = \gcd(a,b)$.
+Let $c = p_1^{\gamma_1}p_2^{\gamma_2}\hdots p_k^{\gamma_k}$. It is clear that $c|a$ and $c|b$ since $\gamma_i \leq \alpha_i,\beta_i$ for each $i$. We now prove that if $d|a$ and $d|b$ then $d|c$. Since $d|a$ and $d|b$, then it must be true that $d = p_1^{\delta_1}p_2^{\delta_2}\hdots p_k^{\delta_k}$, where $0 \leq \delta_i \leq \alpha_i,\beta_i$ and $\delta_i \in \integers$ for each $i$. Compare now $\delta_i$ and $\gamma_i = \min(\alpha_i,\beta_i)$. It is clear then that $\delta_i \leq \min(\alpha_i,\beta_i)$ for each $i$, so $d|c$ since $\gamma_i - \delta_i \geq 0$. Hence, $c = \gcd(a,b)$.
 
 If $a$ and $b$ are relatively prime, then $\gcd(a,b) = 1$ and $\gamma_i = 0$ for each $i$, meaning that $\alpha_i$ or $\beta_i$ is zero. Hence $a$ and $b$ share no common prime divisors. Now suppose that $a$ and $b$ share no common divisors, then for each $i$ we have that at least one of $\alpha_i$ or $\beta_i$ is zero, meaning that $\gamma_i = 0$ and $\gcd(a,b) = 1$, implying that $a$ and $b$ are relatively prime.
 \end{proof}
