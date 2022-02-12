@@ -3,4 +3,5 @@
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
 
-\newcommand{\lcm}{\rm lcm}
+\newcommand{\lcm}{{\rm lcm}}
+\newcommand{\order}[1]{{\rm order}\left(#1\right)}
