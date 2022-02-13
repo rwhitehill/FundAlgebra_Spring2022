@@ -44,14 +44,13 @@ order & 1 & 12 & 6 & 4 & 3 & 12 & 2 & 12 & 3 & 4 & 6 & 12 \\
 
 \prob{2}{Find the orders of the following elements of the multiplicative group $(\integers/36\integers)^{\times}$: $\bar{1},~\overline{-1},~\bar{5},~\overline{-13},~\overline{17}$.}
 
-$\rightarrow$ To find the orders of the elements of the group $(\integers/36\integers)^{\times}$, we determine the least $n$ such that $\bar{a}^n = \bar{1}$. They are as follows:
-
+$\rightarrow$ To find the orders of the elements of the group $(\integers/36\integers)^{\times}$, we determine the least $n$ such that $\bar{a}^n = \overline{a^n} = \bar{1}$. They are as follows:
 \begin{align*}
 \order{\bar{1}} &= 1 \\
-\order{\bar{-1}} &= 2 \\
-\order{\bar{5}} &= \infty \\
-\order{\overline{-13}} &= \infty \\
-\order{\overline{17}} &= \infty 
+\order{\overline{-1}} &= 2 \\
+\order{\bar{5}} &= 6 \\
+\order{\overline{-13}} &= 6 \\
+\order{\overline{17}} &= 2
 \end{align*}
 
 \prob{3}{Let $(A,\star)$ and $(B,\diamond)$ be groups. Let $A \times B$ be the Cartesian product of $A$ and $B$. Define an operation $*$ on $A \times B$ by
@@ -73,7 +72,7 @@ since $\star$ and $\diamond$ are associative binary operations on $A$ and $B$, r
 
 ii) Since $(A,\star)$ and $(B,\diamond)$ are groups, they must have identities $\id_{(A,\star)}$ and $\id_{(B,\diamond)}$. Thus, we see that $(A \times B,*)$ has an identity element $\id = (\id_{(A,\star)},\id_{(B,\diamond)})$ since $(a,b) * \id = (a \star \id_{(A,\star)},b \diamond \id_{(B,\diamond)}) = (a,b)$.
 
-iii) Finally, since each element $a \in A$ and $b \in B$ have unique inverses $a^{-1}$ and $b^{-1}$ under $\star$ and $\diamond$, respectively, we see that $(a,b) \in A \times B$ has inverse $(a^{-1},b^{-1})$ under $*$, observing that $(a,b) * (a^{-1},b^{-1}) = (a \star a^{-1},b \diamond b^{-1}) = (\id_{(A,\star)},\id_{(B,\diamond)})$.
+iii) Finally, since each element $a \in A$ and $b \in B$ have unique inverses $a^{-1}$ and $b^{-1}$ under $\star$ and $\diamond$, respectively, we see that $(a,b) \in A \times B$ has inverse $(a^{-1},b^{-1})$ under $*$, observing that $(a,b) * (a^{-1},b^{-1}) = (a \star a^{-1},b \diamond b^{-1}) = (\id_{(A,\star)},\id_{(B,\diamond)}) = \id$.
 \end{proof}
 
 \prob{4}{Let $A$ be the set of $2 \times 2$ matrices with real number entries. Let
@@ -293,7 +292,7 @@ which has a determinant which is trivally zero.
 
 Note: If we impose an additional restriction on $B$ such that only matrices which are invertible are elements of $B$, then $B$ would be a group under matrix multiplication.
 
-\prob{5[2.1.2]}{Let $\theta$ by a real number and define 
+\prob{5[2.1.2]}{Let $\theta$ be a real number and define 
 \begin{align*}
 R_{\theta} = \begin{bmatrix}
 \cos{\theta} & -\sin{\theta} \\
@@ -373,7 +372,7 @@ R_{\theta}R_{-\theta} = \begin{bmatrix}
 \end{bmatrix}
 = \id,
 \end{align*}
-meaning $R_{\theta}^{-1} = R_{-\theta}$.
+meaning $R_{\theta}R_{\mu} = R_{\theta + \mu}$ and $R_{\theta}^{-1} = R_{-\theta}$.
 
 (c) Let $G = \{R_{\theta}|\theta\in\reals\}$. Show that $G$ is a group under matrix multiplication.
 
@@ -426,9 +425,9 @@ so every matrix in $G$ has a unique inverse.
 \prob{7[2.2.1]}{Let $G$ be a group. Prove that $(ab)^{-1} = a^{-1}b^{-1}$ for all $a$ and $b$ in $G$ if and only if $G$ is abelian.}
 
 \begin{proof}
-($\Leftarrow$) We have proven that $(ab)^{-1} = b^{-1}a^{-1}$ for any group. If $G$ is abelian, then it follows that $b^{-1}a^{-1} = a^{-1}b^{-1} = (ab)^{-1}$.
+($\Leftarrow$) We have proven that $(ab)^{-1} = b^{-1}a^{-1}$ for any group. If $G$ is abelian, then it follows that $b^{-1}a^{-1} = a^{-1}b^{-1}$.
 
-($\Rightarrow$) Suppose that $(ab)^{-1} = a^{-1}b^{-1}$. We have also proven that $(ab)^{-1} = a^{-1}b^{-1}$. Hence, $(ab)^{-1} = (ba)^{-1}$ for all $a,b \in G$. This implies that $ab = ba$ (since each element has a unique inverse) and that $G$ is abelian.
+($\Rightarrow$) Suppose that $(ab)^{-1} = a^{-1}b^{-1}$. We have also proven that $(ab)^{-1} = b^{-1}a^{-1}$. Hence, $(ab)^{-1} = (ba)^{-1}$ for all $a,b \in G$. This implies that $ab = ba$ (since each element has a unique inverse) and that $G$ is abelian.
 \end{proof}
 
 \prob{8[2.2.2]}{Let $G$ be a group. Show that, for all $a,b\in G$, we have $(ab)^2 = a^2b^2$ if and only if $G$ is abelian.}
@@ -442,7 +441,7 @@ so every matrix in $G$ has a unique inverse.
 \prob{9[2.2.3]}{If $G$ is a group in which $a^2 = \id$ for all $a \in G$, show that $G$ is abelian.}
 
 \begin{proof}
-Observe that each element is its own inverse. That is $a=a^{-1}$. Thus, $ab = (ab)^{-1} = b^{-1}a^{-1} = ba$, proving that $G$ is abelian.
+Observe that each element in $G$ is its own inverse. That is $a=a^{-1}$. Thus, $ab = (ab)^{-1} = b^{-1}a^{-1} = ba$, proving that $G$ is abelian.
 \end{proof}
 
 \prob{10[2.2.4]}{}
