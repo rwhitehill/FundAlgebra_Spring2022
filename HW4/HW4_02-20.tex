@@ -67,6 +67,22 @@ Then it follows that
 
 \prob{2}{Show that $\left<a,b | a^2=b^2=(ab)^2=\id \right>$ give a presentation for $D_{2n}$ in terms of the two generators $a = s$ and $b = sr$ of order $2$.}
 
+The dihedral group in terms of the rotation and reflection generators $r,s$ is given as 
+\begin{align*}
+D_{2n} = \langle r,s | r^{n} = s^2 = \id,~rs=sr^{-1} \rangle
+\end{align*}
+We show that the representation above holds for $n = 2$.
+\begin{proof}
+First, we prove that the representation in terms of $a,b$ implies the relations for the representation in terms of $r,s$. First, notice that $a^2 = s^2 = \id$ and $(ab)^2 = (ssr)^2 = (s^2r)^2 = r^2 = \id$. Next, we see that $b^2 = (sr)^2 = \id$, $sr = r^{-1}s$, and $rs = sr^{-1}$.
+
+Now, we prove that the representation in terms of $r,s$ implies the relations for the representation in terms of $a,b$. Observe $s^2 = a^2 = \id$ and $r^2 = (ab)^2 = \id$. Finally, notice that $rs = sr^{-1}$ or $(sr)^2 = b^2 = \id$.
+\end{proof}
+
+We must prove that one representation implies the relations in the other.
+\begin{proof}
+We prove that the representation $r,s$ implies $a,b$. We are given that $a = s$ and $b = sr$. It is clear that $a^2 = s^2 = \id$. Notice that $b^-1 = b = r^{-1}s$, 
+\end{proof}
+
 \prob{3[1.1.1]}{Complete the multiplication table for $D_8$. Find at least one interesting pattern in the table.}
 
 \begin{table}[H]
@@ -86,7 +102,7 @@ Then it follows that
  \end{center}
 \end{table}
 
-*Something interesting*
+One interesting thing to note is that there are distinct quadrants of product transformations. For products of rotations and reflections we get effectively rotations, which are shown in the upper left and lower right corners. However when the product contains one reflection and one rotation we get reflections effectively, shown in the lower left and upper right corners.
 
 \prob{4[1.1.4]}{}
 
@@ -136,12 +152,12 @@ The centralizer of an element $a \in G$ is the set of all elements $b \in G$ suc
 
 \prob{7[1.2.4]}{Let $\sigma = (1~3~5)(2~4)$ and $\tau = (1~5)(2~3)$ be elements of $S_5$. Find $\sigma^2$, $\sigma\tau$, $\tau\sigma$, and $\tau\sigma^2$.}
 
-\begin{align*}
-\sigma^2 &= [(1~3~5)(2~4)][(1~3~5)(2~4)] = (1~5~3) \\
-\sigma\tau &= [(1~3~5)(2~4)][(1~5)(2~3)] = (5~3~4~2) \\
-\tau\sigma &= [(1~5)(2~3)][(1~3~5)(2~4)] = (1~2~4~3) \\
-\tau\sigma^2 &= [(1~5)(2~3)](1~5~3) = (5~2~3)
-\end{align*}
+\begin{alignat*}
+\sigma \sigma^2 &= [(1~3~5)(2~4)][(1~3~5)(2~4)] &&= (1~5~3) \\
+\sigma\tau &= [(1~3~5)(2~4)][(1~5)(2~3)] &&= (5~3~4~2) \\
+\tau\sigma &= [(1~5)(2~3)][(1~3~5)(2~4)] &&= (1~2~4~3) \\
+\tau\sigma^2 &= [(1~5)(2~3)](1~5~3) &&= (5~2~3)
+\end{alignat*}
 
 \prob{8[1.2.5]}{Construct a complete multiplication table for $S_3$. What is the center of $S_3$? If $f = (1~2~3)$, what is $\mathbf{C}_{S_3}(f)$, the centralizer of $f$ in $S_3$?}
 
