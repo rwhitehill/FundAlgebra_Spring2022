@@ -72,15 +72,11 @@ The dihedral group in terms of the rotation and reflection generators $r,s$ is g
 D_{2n} = \langle r,s | r^{n} = s^2 = \id,~rs=sr^{-1} \rangle
 \end{align*}
 We show that the representation above holds for $n = 2$.
+
 \begin{proof}
 First, we prove that the representation in terms of $a,b$ implies the relations for the representation in terms of $r,s$. First, notice that $a^2 = s^2 = \id$ and $(ab)^2 = (ssr)^2 = (s^2r)^2 = r^2 = \id$. Next, we see that $b^2 = (sr)^2 = \id$, $sr = r^{-1}s$, and $rs = sr^{-1}$.
 
 Now, we prove that the representation in terms of $r,s$ implies the relations for the representation in terms of $a,b$. Observe $s^2 = a^2 = \id$ and $r^2 = (ab)^2 = \id$. Finally, notice that $rs = sr^{-1}$ or $(sr)^2 = b^2 = \id$.
-\end{proof}
-
-We must prove that one representation implies the relations in the other.
-\begin{proof}
-We prove that the representation $r,s$ implies $a,b$. We are given that $a = s$ and $b = sr$. It is clear that $a^2 = s^2 = \id$. Notice that $b^-1 = b = r^{-1}s$, 
 \end{proof}
 
 \prob{3[1.1.1]}{Complete the multiplication table for $D_8$. Find at least one interesting pattern in the table.}
@@ -108,7 +104,7 @@ One interesting thing to note is that there are distinct quadrants of product tr
 
 (a) List the symmetries of a rectangle.
 
-The symmetries are given in the second figure in problem 1 can be put into the set $D_8$, which is also given in problem 1.
+The symmetries are given in the second figure in problem 1 and can be put into the set $D_8$, which is also given in problem 1.
 
 (b) Write the multiplication table for the symmetries of a rectangle.
 
@@ -135,7 +131,7 @@ The centralizer of an element $a \in G$ is the set of all elements $b \in G$ suc
 
 \prob{6[1.1.6]}{Let $D_6$ denote the set of symmetries of an equilateral triangle. Find the multiplication table for $D_6$. What is the center of $D_6$?}
 
-\begin{table}
+\begin{table}[H]
  \begin{center}
   \begin{tabular}{c|cccccc}
    & $R_{0}$ & $R_{60}$ & $R_{120}$ & $D_1$ & $D_2$ & $D_3$ \\
@@ -196,7 +192,7 @@ f^{2} &= (1~2~3)(1~2~3) = (1~3~2) \\
 f^{3} &= (1~2~3)(1~3~2) = \id_{[3]} \\
 \vdots
 \end{align*}
-It is seen that this sequence essentially lists the elements of the cyclic group $<f> = \{f,f^2,f^3=\id_{[3]}\}$.
+It is seen that this sequence essentially lists the elements of the cyclic group $\langle f \rangle = \{f,f^2,f^3=\id_{[3]}\}$.
 
 
 \end{document}
