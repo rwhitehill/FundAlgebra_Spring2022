@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{../preamble_files/packages}
+\input{../preamble_files/figures}
+\input{../preamble_files/references}
+\input{../preamble_files/shortcuts}
+
+\pagestyle{fancy}
+\lhead{Richard Whitehill}
+\chead{MATH 513 -- HW 5}
+\rhead{03/02/22}
+\cfoot{\thepage~of~\pageref{LastPage}}
+
+\newcommand{\prob}[2]{\textbf{#1)} #2}
+\newenvironment{proof}
+{
+\textbf{\underline{Proof}} \\
+}
+{
+\begin{flushright}
+$\blacksquare$
+\end{flushright}}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\prob{1[2.3.6]}{Find all the generators of the following cyclic groups: 
+\begin{align*}
+(\integers/6\integers,+),((\integers/5\integers)^{\times},\cdot),(2\integers,+),((\integers/11\integers)^{\times},\cdot)
+\end{align*}
+}
+$\rightarrow$ $\integers/6\integers = \langle 1 \rangle = \langle 5 \rangle$.
+
+$\rightarrow$ $(\integers/5\integers)^{\times} = \langle 2 \rangle$
+
+$\rightarrow$ $2\integers = \langle 2 \rangle = \langle -2 \rangle$
+
+$\rightarrow$ $(\integers/11\integers)^{\times} = \langle \rangle$
+
+***
+
+\prob{2[2.3.7]}{Show that a finite group of even order has to have at least one element of order 2.}
+
+\begin{proof}
+It has been proven in a previous homework problem that if a group has finite, even order then there exists $a \in G$ such that $a^2 = \id_G$ but $a \not= \id_G$. This is equivalent to saying that $o(a) = 2$, proving the above claim.
+
+Let $G$ be a finite group of even order. Thus, we can write $G = \{\id_{G},g_2,\hdots,g_{2n}\}$. We prove in a problem below that $o(x) = o(x^{-1})$. Consider the set of all elements in $G$ such that $o(x) > 2$. Then this set has even order since $x$ and $x^{-1}$ have the same order. We also know that $o(\id) = 1$, implying that the set of $G$ has an odd number of elements that are not $\id_G$. It then follows that there must be at least one element in $G$ which has order 2 since there are an odd number of nonidentity elements in $G$ along with the previous observations.
+\end{proof}
+
+\prob{3[2.3.11]}{Let $G$ be a group, and let $x \in G$. How are $o(x)$ and $o(x^{-1})$ related? Prove your assertion}
+
+$\rightarrow$ We claim that $o(x^{-1}) = o(x)$.
+
+\begin{proof}
+Observe that $o(x) = \min\{m\in\integers^{+}|x^{m}=\id\}$ and that $(x^{-1})^m = (x^{m})^{-1}$. Thus, if $x^m = \id_G$, then $(x^{-1})^{m} = (x^{m})^{-1} = \id_G^{-1} = \id_{G}$, and $o(x^{-1}) = \min\{m\in\integers^{+}|(x^{-1})^{m}=\id\} = \min\{m\in\integers^{+}|(x^{m})^{-1}=\id\} = \min\{m\in\integers^{+}|x^{m}=\id\} =  o(x)$.
+\end{proof}
+
+\prob{4[2.4.4]}{Let $H = \{2^{n}|n\in\integers\}$, and let $\cdot$ denote ordinary multiplication. Show that $(H,\cdot)$ is isomorphic to $(\integers,+)$.}
+
+\begin{proof}
+Consider $\varphi: \integers \rightarrow H$ such that $\varphi(n) = 2^n$. It is obvious that this function is bijective since if $2^n = 2^m$ then $n=m$ and $\varphi(\integers) = H$ by definition. We now prove that $\varphi$ is homomorphic. Observe that $\varphi(n+m) = 2^{n+m}$ and $\varphi(n)\varphi(m) = 2^n2^m$. It is clear then that $\varphi(n+m) = \varphi(n)\varphi(m)$.
+\end{proof}
+
+\prob{5[2.4.14]}{Let $G$ and $H$ be groups, and let $\phi: G \rightarrow H$ be a group homomorphism. For $x \in G$, prove that $\phi(x^{-1}) = \phi(x)^{-1}$.}
+
+\begin{proof}
+Recall that $\phi(\id_G) = \id_H$. Notice that $x^{-1}x = \id_G$, meaning that $\phi(x^{-1}x) = \phi(x^{-1})\phi(x) = \id_H$ or $\phi(x^{-1}) = \phi(x)^{-1}$.
+\end{proof}
+
+\prob{6[2.6.4]}{Let $G$ be a group, and let $H$ and $K$ be subgroups of $G$. Show that $H \cap K$ is a subgroup of $G$.}
+
+\begin{proof}
+Notice that $\id \in H \cap K$ since $\id \in H$ and $\id \in K$, meaning that $H \cap K$ is nonempty. Let $a,b \in H \cap K$. Then $a,b \in H$ and $a,b \in K$, implying $ab \in H$ and $ab \in K$ and $ab \in H \cap K$. Finally, suppose that $a \in H \cap K$. Then $a \in H$ and $a \in K$, which means that $a^{-1} \in H$ and $a^{-1} \in K$ and $a^{-1} \in H \cap K$.
+\end{proof}
+
+\prob{7[2.6.9]}{Let $G$ be a group, and assume that $a$ and $b$ are two elements of order 2 in $G$. If $ab = ba$, then what can you say about $\langle a,b \rangle$?}
+
+$\rightarrow$ We can write $G = \langle a,b | a^2=b^2, ab = ba \rangle = \{\id_G,a,b,ab\}$.
+
+\prob{8[2.6.12]}{Let $G = \langle x,y ~|~ x^{7}=y^{3}=\id,yxy^{-1}=\id \rangle$. What is $|G|$? Find a familiar group that is isomorphic to $G$.}
+
+$\rightarrow$ Notice that the relation $yxy^{-1} = \id$ reduces to $x = y^{-1}y = \id$, so we can write $G = \{\id,y,y\}$. It is clear then that this group is isomorphic to the additive group $\integers/3\integers$. This may be observed with the function from $\varphi: \integers/3\integers \rightarrow G$ such that $\varphi(\bar{n}) = y^{n}$.
+
+\prob{9[2.6.19]}{Let $G$ and $H$ be groups, and let $\theta: G \rightarrow H$ be a homomorphism. The set $\{x \in G | \theta(x)=\id \}$ is called the \textit{kernel} of $\theta$ and is denoted by ${\rm ket}(\theta)$. Show that ${\rm ker}(\theta)$ is a subgroup of $G$.}
+
+\begin{proof}
+Notice that $\id_G \in \ker(\theta)$ since $\theta(\id_G) = \id_H$, meaning that $\ker(\theta)$ is nonempty. Next, suppose that $a,b \in \ker(\theta)$, then $\theta(a) = \theta(b) = \id_H$. Thus, $\theta(ab) = \theta(a)\theta(b) = \id_H\id_H = \id_H$, implying that $ab \in \ker(\theta)$. Now, suppose that $a \in \ker(\theta)$. We then have that $\theta(a^{-1}a) = \theta(a^{-1})\theta(a) = \theta(a^{-1})\id_H = \theta(a^{-1})$. It is also known that $\theta(a^{-1}a) = \theta(\id_G) = \id_H$, implying that $\theta(a^{-1}) = \id_H$.
+\end{proof}
+
+\prob{10[2.6.20]}{Let $G$ and $H$ be groups, and let $\theta: G \rightarrow H$ be a homomorphism. Let $K$ be a subgroup of $H$. The set of elements of $G$ that are mapped into $K$ are denoted by $\theta^{-1}(K)$. In other words,
+\begin{align*}
+\theta^{-1}(K) = \{g \in G ~|~ \theta(g) \in K \}
+\end{align*}
+Is $\theta^{-1}(K)$ necessarily a subgroup of $G$?}
+
+\begin{proof}
+Obviously $\id_G \in \theta^{-1}(K)$, so it is nonempty. If $a,b \in \theta^{-1}(K)$, then $\theta(a),\theta(b) \in K$. Hence, because $\theta$ is a homomorphism $\theta(ab) = \theta(a)\theta(b) \in K$ since $K$ is closed under multiplication. Thus, $ab \in \theta^{-1}(K)$. Similarly, if $a \in K$, then $\theta(a^{-1}a) = \theta(a^{-1})\theta(a) = \id_H$ or $\theta(a^{-1}) = \theta(a)^{-1}$. Notice that $\theta(a^{-1}) = \theta(a)^{-1} \in K$ since $\theta(a) \in K$.
+\end{proof}
+
+
+\end{document}
