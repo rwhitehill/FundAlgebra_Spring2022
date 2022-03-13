@@ -39,7 +39,7 @@ $\rightarrow$ Define the map $\integers \times \integers \rightarrow \integers$ 
 \prob{1.7.6}{Prove that a group $G$ acts faithfully on a set $A$ iff the kernel of the action is the set consisting only of the identity.}
 
 \begin{proof}
-($\Rightarrow$) Suppose that $G$ acts faithfully on $A$. That is, if $g_1,g_2$ are distinct elements of $G$, then $\sigma_{g_1} \not= \sigma_{g_2}$. By the definition of a group action, $\id$ is in the kernel of the group action. However, it is the only element in the kernel since if $g \not= \id$, then $\sigma_{g} \not= \sigma_{\id}$. Hence, there exists at least one element $b \in A$ such that $\sigma_g b \not= b$.
+($\Rightarrow$) Suppose that $G$ acts faithfully on $A$. That is, if $g_1,g_2$ are distinct elements of $G$, then $\sigma_{g_1} \not= \sigma_{g_2}$. By the definition of a group action, $\id$ is in the kernel of the group action. However, it is the only element in the kernel since if $g \not= \id$, then $\sigma_{g} \not= \sigma_{\id}$. Hence, there exists at least one element $b \in A$ such that $\sigma_g(b) \not= b$.
 
 ($\Leftarrow$) Suppose that the kernel of a group action $\{g \in G | \forall a \in A, ga = a\} = \{\id\}$ but that the group action is not faithful. Then there exist two distinct group elements $g_1,g_2$ such that $\sigma_{g_1} = \sigma_{g_2}$. Then $\sigma_{g_2^{-1}} \circ \sigma_{g_1} = \id$, which would imply that $g_2^{-1}g_1$ is in the kernel of the group action, but this is a contradiction since $g_2^{-1}g_1 \not= \id$. Hence, the group action must be faithful.
 \end{proof}
@@ -58,7 +58,7 @@ It is clear that the second requirement of the map is satisfied since $\id \cdot
 (2) Also observe that $\id \cdot a = a\id^{-1} = a\id = a$.
 \end{proof}
 
-\prob{1.7.16}{Let $G$ be a ny group and let $A = G$. Show that the maps defined by $g \cdot a = gag^{-1}$ for all $g,a \in G$ do satisfy the axioms of a (left) group action (this action of $G$ on itself is called \textit{conjugation})}
+\prob{1.7.16}{Let $G$ be any group and let $A = G$. Show that the maps defined by $g \cdot a = gag^{-1}$ for all $g,a \in G$ do satisfy the axioms of a (left) group action (this action of $G$ on itself is called \textit{conjugation})}
 
 \begin{proof}
 (1) We see that $g_1 \cdot (g_2 \cdot a) = g_1 \cdot g_2ag_2^{-1} = g_1g_2ag_2^{-1}g_2^{-1}$ and $(g_1g_2) \cdot a = g_1g_2a(g_1g_2)^{1}$, implying that this map satisfies the first property of a group action.
@@ -141,7 +141,7 @@ Note that if $a \in A$ then $sr^{k}a(sr^{k})^{-1} = sr^{k}ar^{-k}s = sr^{k}r^{-k
 Recall that $N_{G}(H) = \{g \in G | gHg^{-1} = H\}$ and $gHg^{-1} = \{ghg^{-1} | h \in H\}$. We know that $H,N_G(H)$ are both subgroups of $G$ so we must simply show that $H \subset N_G(H)$. That is, we must prove that $hHh^{-1} = H$. This is simple to observe since $H$ is closed under products and if $a \in H$, then $a \in hHh^{-1}$ since $h(h^{-1}ah)h^{-1} = a$.
 \end{proof}
 
-$\rightarrow$ The above result hinges on the assumption that $H$ is a subgroup of $G$. Consider the following example: 
+$\rightarrow$ The above result hinges on the assumption that $H$ is a subgroup of $G$. Consider the following example: $G = \integers/3\integers$ and $H = \{\bar{1}\}$. Obviously, $H$ is not a subgroup of $G$ since it is not closed under addition and $N_G(H) = \integers/3\integers$.
 
 (b) Show that $H \leq C_G(H)$ iff H is abelian.
 
