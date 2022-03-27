@@ -1,0 +1,52 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{../preamble_files/packages}
+\input{../preamble_files/figures}
+\input{../preamble_files/references}
+\input{../preamble_files/shortcuts}
+
+\pagestyle{fancy}
+\lhead{Richard Whitehill}
+\chead{MATH 513 -- HW 7}
+\rhead{03/27/22}
+\cfoot{\thepage~of~\pageref{LastPage}}
+
+\newcommand{\prob}[2]{\textbf{#1)} #2}
+\newenvironment{proof}
+{
+\textbf{\underline{Proof}} \\
+}
+{
+\begin{flushright}
+$\blacksquare$
+\end{flushright}}
+
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\prob{3.1.1}{Let $\varphi: G \rightarrow H$ be a homomorphism and let $E \leq H$. Prove that $\varphi^{-1}(E) \leq G$. If $E \trianglelefteq H$ prove that $\varphi^{-1}(E) \trianglelefteq G$. Deduce that $\ker{\varphi} \trianglelefteq G$}
+
+\begin{proof}
+Notice that since $E$ is a subgroup of $H$, then $\id_H \in E$, and it is clear that $\varphi(\id_G) = \id_H$ meaning that $\id_G \in \varphi^{-1}(E)$. 
+\end{proof}
+
+\prob{3.1.3}{Let $A$ be an abelian group and $B \leq A$. Prove that $A/B$ is abelian. Give an example of a non-abelian group $G$ containing a proper normal subgroup $N$ such that $G/N$ is abelian.}
+
+\prob{3.1.4}{Prove that in the quotient group $G/N$, $(gN)^{\alpha} = g^{\alpha}N$ for all $\alpha \in \integers$}
+
+\prob{3.1.5}{Use the preceding exercise to prove that the order of the element $gN$ in $G/N$ is $n$, where $n$ is the smallest positive integer such that $g^n \in N$. Give an example to show that the order of $gN$ in $G/N$ may be strictly smaller than the order of $g$ in $G$.}
+
+\prob{3.1.24}{Prove that if $N \trianglelefteq G$ and $H$ is any subgroup of $G$ then $N \cap H \trianglelefteq H$.}
+
+\prob{3.1.36}{Prove that if $G/Z(G)$ is cyclic then $G$ is abelian.[If $G/Z(G)$ is cyclic with generator $xZ(G)$, show that every element of $G$ can be written in the form $x^az$ for some integer $a \in \integers$ and some element $z \in Z(G)$.] }
+
+\prob{3.2.1}{Which of the following are permissible orders for subgroups of a group of order 120: 1, 2, 5, 7, 9, 15, 60, 240? For each permissible order give the corresponding index.}
+
+\prob{3.2.4}{Show that if $|G| = pq$ for some primes $p$ and $q$ (not necessarily distinct) then either $G$ is abelian or $Z(G) = 1$.}
+
+\prob{3.2.8}{Prove that if $H$ and $K$ are finite subgroups of $G$ whose orders are relatively prime then $H \cap K = 1$.}
+
+
+\end{document}
