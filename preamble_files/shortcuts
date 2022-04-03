@@ -2,6 +2,7 @@
 \newcommand{\integers}{\mathbb{Z}}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\naturals}{\mathbb{N}}
+\newcommand{\rationals}{\mathbb{Q}}
 
 \newcommand{\lcm}{{\rm lcm}}
 \newcommand{\order}[1]{{\rm order}\left(#1\right)}
