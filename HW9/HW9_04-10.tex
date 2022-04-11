@@ -69,11 +69,18 @@ a) Prove that $R[[x]]$ is a commutative ring with 1.
     Now, we show that multiplication is associative.
     Consider the following:
     \begin{align*}
-        \sum_{n=0}^{\infty} a_n x^n\left( \sum_{n=0}^{\infty} b_{n}x^{n} \times \sum_{n=0}^{\infty} c_{n}x^{n} \right) &= \sum_{n=0}^{\infty} a_n x^n \times \sum_{n=0}^{\infty} \left( \sum_{k=0}^{n} b_{k}c_{n-k} \right) x^{n} \\
-        &= \sum_{n=0}^{\infty} \left( \sum_{j=0}^{n} a_n \left( \sum_{k=0}^{n} b_{k}c_{n-k} \right) \right) x^{n}
+        \sum_{n=0}^{\infty} a_n x^n \times \left( \sum_{n=0}^{\infty} b_{n}x^{n} \times \sum_{n=0}^{\infty} c_{n}x^{n} \right) &= \sum_{n=0}^{\infty} a_n x^n \times \sum_{n=0}^{\infty} \left( \sum_{j=0}^{n} b_{j}c_{n-j} \right) x^{n} \\
+        &= \sum_{n=0}^{\infty} \left( \sum_{k=0}^{n} a_k \left( \sum_{j=0}^{n-k} b_{j}c_{n-k-j} \right) \right) x^{n} \\
+        \left( \sum_{n=0}^{\infty} a_n x^n \times \sum_{n=0}^{\infty} b_n x^n \right) \times \sum_{n=0}^{\infty} c_n x^n &= \sum_{n=0}^{\infty} \left( \sum_{j=0}^{n} a_{n-j} b_{j} \right) x^n \times \sum_{n=0}^{\infty} c_n x^n \\ 
+        &= \sum_{n=0}^{\infty} \left( \left(\sum_{j=0}^{n-k} a_{n-j-k} b_{j} \right) \sum_{k=0}^{n} c_{k} \right) x^n
     .\end{align*}
+    
+    Note that the roles of $a$ and $c$ are flipped in the two equations.
+    It is important to note that the indices of $a$, $b$, and $c$ add up to $n$ and the starting and ending indices for the sums are the same.
+    Because of this we can shift indices and end up with the coefficients in both products being the same.
+    That is, we could define $m = n - j -k$ and carry out the necessary shifts and see that we have a sum over $a_mb_jc_{n-j-m}$ with the same starting and terminating indices.
 
-    From this it is simple to show that the distribution laws hold:
+    From this it is clear that the distributive laws hold since they hold in $R$.
 
     Now, we see that the identity is just 1, the identity of $R$, and that it is commutative since $R$ is commutative.
 \end{proof}
@@ -176,24 +183,174 @@ Prove that the center of the ring $M_{n}(R)$ is the set of scalar matrices.
 \end{proof}
 
 \prob{7.3.12}{
-Let $D$ be an integer that is not a perfect square in $\integers$ and let $S = { \begin{pmatrix}
+Let $D$ be an integer that is not a perfect square in $\integers$ and let $S = \{ \begin{pmatrix}
         a & b \\
         Db & a
-\end{pmatrix} | a,b \in \integers } $.
+\end{pmatrix} | a,b \in \integers \} $.
 }
 
-a) Prove that $S$ is a subring of $M_2(\integers)$
+a) Prove that $S$ is a subring of $M_2(\integers)$.
 
-b) If $D$ is no a perfect square in $\integers$ prove that the map $\varphi: \integers[\sqrt{D}] \to S$ defined by $\varphi\left( a + b\sqrt{D} \right) = \begin{pmatrix}
+\begin{proof}
+Consider the following:
+\begin{align*}
+	\begin{pmatrix}
+		a & b \\
+		Db & a
+	\end{pmatrix}
+	-
+	\begin{pmatrix}
+		a' & b' \\
+		Db' & a'
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		a  - a' & b - b' \\
+		D(b - b') & a - a'
+	\end{pmatrix}
+	\in M_2(\integers)
+\end{align*}
+and
+\begin{align*}
+\begin{pmatrix}
+		a & b \\
+		Db & a
+	\end{pmatrix}
+	\begin{pmatrix}
+		a' & b' \\
+		Db' & a'
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		aa' + Dbb' & ab' + ba' \\
+		D(ba' + ab') & Dbb' + aa'
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+		c & d \\
+		Dd & c
+	\end{pmatrix}
+	\in M_2(\integers)
+.\end{align*}
+Thus, $S$ is a subring of $M_2(\integers)$.
+\end{proof}
+
+b) If $D$ is not a perfect square in $\integers$ prove that the map $\varphi: \integers[\sqrt{D}] \to S$ defined by $\varphi\left( a + b\sqrt{D} \right) = \begin{pmatrix}
     a & b \\
     Db & a
 \end{pmatrix}$ is a ring isomorphism.
 
-c) If $D \equiv 1 \mod{4}$ is squarefree, prove that the set ${ \begin{pmatrix}
+\begin{proof}
+	It is clear that this is a group homomorphism under addition:
+	\begin{align*}
+		\varphi([a + b\sqrt{D}] + [a' + b'\sqrt{D}]) &= 
+		\begin{pmatrix}
+			a + a' & b + b' \\
+			D(b + b') & a + a'
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+		a & b \\
+		Db & a
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+		a' & b' \\
+		Db' & +a'
+		\end{pmatrix}
+		\\
+		&=
+		\varphi(a + b\sqrt{D}) + \varphi(a' + b'\sqrt{D})
+	.\end{align*}
+	Under multiplication, we have
+	\begin{align*}
+		\varphi([a + b\sqrt{D}] \times [a' + b'\sqrt{D}]) &= \varphi(aa' + bb'D + [ab' + ba']\sqrt{D}) =
+		\begin{pmatrix}
+			aa' + bb'D & ab' + ba' \\
+			D(ab' + ba') & aa' + bb'D
+		\end{pmatrix} \\
+		\varphi(a + b\sqrt{D}) \times \varphi(a' + b'\sqrt{D}) &= 
+		\begin{pmatrix}
+			a & b \\
+			Db & a
+		\end{pmatrix}
+		\begin{pmatrix}
+			a' & b' \\
+			Db' & a'
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			aa' + Dbb' & ab' + ba' \\
+			a'bD + ab'D & bb'D + aa'
+		\end{pmatrix}
+	.\end{align*}
+	Thus, this is a ring homomorphism.
+\end{proof}
+
+c) If $D \equiv 1 \mod{4}$ is squarefree, prove that the set $\{ \begin{pmatrix}
         a & b \\
         \left( D-1 \right)\frac{b}{4} & a+b
-\end{pmatrix} | a,b \in \integers } $ is a subring of $M_2(\integers)$ and is isomorphi to the quadratic integer ring $\mathcal{O}$.
+\end{pmatrix} | a,b \in \integers \} $ is a subring of $M_2(\integers)$ and is isomorphic to the quadratic integer ring $\mathcal{O}$.
 
+\begin{proof}
+	Since this is a subset of matrices, it is clear that it inherits the basic properties of matrix operations.
+	Thus, it is an abelian additive group, associative under multiplication, and follows the necessary distribution laws.
+	
+	Consider the map $\phi: \mathcal{O} \to S$, where $S$ is the set of matrices defined above, defined by $\phi: a + b\omega \mapsto \begin{pmatrix}
+		a & b \\
+		(D-1)b/4 & a+b
+	\end{pmatrix}$, where $\omega = (1 + \sqrt{D})/2$.
+	We prove that this is an isomorphism:
+	\begin{align*}
+		\phi([a + b\omega] + [a' + b'\omega]) &= 
+		\begin{pmatrix}
+			a + a' & b + b' \\
+			(D-1)\frac{b + b'}{4} & (a + a') + (b + b') 
+		\end{pmatrix}
+		\\
+		&=
+		\begin{pmatrix}
+			a & b \\
+			(D-1)\frac{b}{4} & a + b
+		\end{pmatrix}
+		+
+		\begin{pmatrix}
+			a' & b' \\
+			(D-1)\frac{b'}{4} & a' + b'
+		\end{pmatrix} \\
+		&= \phi(a + b\omega) + \phi(a' + b'\omega) \\		
+		\phi([a + b\omega] \times [a' + b'\omega]) &= \phi(aa' + bb'\omega^2 + [ab' + ba']\omega) \\
+		&= \phi(aa' + bb'\frac{D-1}{4} + [ab' + ba' + bb']\omega) \\
+		&= 
+		\begin{pmatrix}
+			aa' + bb'\frac{D-1}{4} & ab' + ba' + bb' \\
+			(D-1)\frac{ab' + ba' + bb'}{4} & aa' + bb'\frac{D-1}{4} + ab' + ba' + bb'
+		\end{pmatrix} \\
+		\phi(a + b\omega)\phi(a' + b'\omega) &= 
+		\begin{pmatrix}
+			a & b \\
+			(D-1)\frac{b}{4} & a + b
+		\end{pmatrix}
+		\begin{pmatrix}
+			a' & b' \\
+			(D-1)\frac{b'}{4} & a' + b'
+		\end{pmatrix} \\
+		&=
+		\begin{pmatrix}
+			aa' + b(D-1)\frac{b'}{4} & ab' + b(a' + b') \\
+			\frac{D-1}{4}[ba' + b'(a + b)] & (D-1)\frac{b}{4}b' + (a+b)(a'+b')
+		\end{pmatrix}
+	.\end{align*}
+	Hence, this is a ring homomorphism.
+	Proving that this is a bijection is fairly simple.
+	We could define the function $\psi: S \to \mathcal{O}$ defined by $\psi: \begin{pmatrix}
+	a & b \\
+	(D-1)b/4 & a+b
+	\end{pmatrix}
+	\mapsto
+	a + b\omega$.
+	Since this is a two sided inverse of $\phi$, it is clear that $\phi$ is a bijection.
+\end{proof}
 
 \prob{7.3.17}{
 Let $R$ and $S$ be nonzero rings with identity and denote their respective identities by $1_{R}$ and $1_{S}$. Let $\varphi: R \rightarrow S$ be a nonzero homomorphism of rings.
@@ -201,13 +358,45 @@ Let $R$ and $S$ be nonzero rings with identity and denote their respective ident
 
 a) Prove that if $\varphi(1_{R}) \ne 1_{S}$ then $\varphi(1_{R})$ is a zero divisor in $S$. Deduce that if $S$ is an integral domain then every ring homomorphism from $R$ to $S$ sends the identity of $R$ to the identity of $S$.
 
+\begin{proof}
+	Notice that $\varphi(1_R) = \varphi(1_R)\varphi(1_R)$, so by the distributive laws, $\varphi(1_R)[1_S - \varphi(1_R)] = 0$. 
+	That is, since $\varphi(1_R) \ne 1_S$, it is clear that $1_S - \varphi(1_R) \ne 0$ and that $\varphi(1_R)$ is a zero divisor in $S$.
+	
+	Notice an equivalent statement of the theorem above is the following:
+	\begin{center}
+		If $\varphi(1_R)$ is not a zero divisor in $S$, then $\varphi(1_R) = 1_S$.
+	\end{center}
+	Hence, it follows that if $S$ is an integral field, meaning that it contains no zero divisors, then $\varphi(1_R) = 1_S$.
+\end{proof}
+
 b) Prove that if $\varphi(1_{R}) = 1_{S}$ then $\varphi(u)$ is a unit in $S$ and that $\varphi\left( u^{-1} \right) = \varphi\left( u \right)^{-1}$ for each unit $u$ of $R$.
+
+\begin{proof}
+	Let $u$ be a unit of $R$.
+	Observe that $\varphi(u^{-1}u) = \varphi(u^{-1})\varphi(u) = 1_S$.
+	That is, $\varphi(u)$ is a unit in $1_S$, with inverse $\varphi(u)^{-1} = \varphi(u^{-1})$.
+\end{proof}
 
 \prob{7.3.18}{}
 
 a) If $I$ and $J$ are ideals of $R$ prove that their intersection $I \cap J$ is also an ideal of $R$.
 
+\begin{proof}
+	Let $x \in I \cap J$.
+	Then $x \in I$ and $x \in J$.
+	It follows then that $rx \in I$ and $rx \in J$ for any $r \in R$, implying that $rx \in I \cap J$.
+	Thus, $r(I \cap J) \subset I \cap J$.
+	Following a similar logic with right multiplication gives that $(I \cap J)r \subset I \cap J$.
+	Hence, $I \cap J$ is ideal.
+\end{proof}
+
 b) Prove that the intersection of an arbitrary nonempty collection of ideals is again an ideal (do not assume the collection is countable).
+
+\begin{proof}
+	Consider a set of ideals: $\{ J_{\alpha} | \alpha \in I \}$.
+	It is clear then that $rJ_{\alpha} \subset J_{\alpha}$  and $J_{\alpha}r \subset J_{\alpha}$ for each $r \in R$.
+	Hence $r \bigcap_{\alpha \in I} J_{\alpha} \subset \bigcap_{\alpha \in I} J_{\alpha}$ and $\left( \bigcap_{\alpha \in I} J_{\alpha} \right) r \subset \bigcap_{\alpha \in I} J_{\alpha}$, implying that the intersection of ideals is ideal.
+\end{proof}
 
 \prob{7.3.25}{
 Assume $R$ is a commutative ring with 1. Prove that the Binomial Theorem
@@ -217,18 +406,74 @@ Assume $R$ is a commutative ring with 1. Prove that the Binomial Theorem
 holds in $R$, where the binomial coefficient $n \choose k$ is interpreted in $R$ as the sum $1 + 1 + \ldots + 1$ of the identity $1$ in $R$ taken $n \choose k$ times.
 }
 
+\begin{proof}
+	Notice that for $n=0$ we have $(a + b)^0 = 1 = {0 \choose 0}$, which is true.
+	Now suppose this is true for some integer $n$.
+	We show that the binomial theorem holds for the $n + 1$ case.
+	Observe that
+	\begin{align*}
+		(a + b)^{n+1} &= (a+b)(a+b)^n = (a+b)\sum_{k=0}^{n} {n \choose k}a^kb^{n-k} \\
+		&= \sum_{k=0}^{n} {n \choose k}a^{k+1}b^{n-k} + \sum_{k=0}^{n} {n \choose k}a^kb^{n+1-k} \\
+		&= a^{n+1} + \sum_{k=0}^{n-1} {n \choose k} a^{k+1}b^{n-k} + \sum_{k=1}^{n} {n \choose k}a^kb^{n+1-k} + b^{n+1} 
+	.\end{align*}
+	We now shift the index of the first sum $k+1 \mapsto k$, giving
+	\begin{align*}
+		(a + b)^{n+1} &= a^{n+1} + \sum_{k=1}^{n} \left[{n \choose k-1} + {n \choose k} \right] a^{k}b^{n+1-k} + b^{n+1} \\
+		&= a^{n+1} + \sum_{k=1}^{n} {n+1 \choose k} a^{k}b^{n+1-k} + b^{n+1} \\
+		&= \sum_{k=0}^{n+1} {n+1 \choose k} a^kb^{n+1-k}
+	.\end{align*}
+\end{proof}
+
 \prob{7.3.29}{
 Let $R$ be a commutative ring. Recall that an element $x \in R$ is nilpotent if $x^{n} = 0$ for some $n \in \integers^{+}$. Prove that the set of nilpotent elements form an ideal -- called the \textit{nilradical} of $R$ and denoted $\mathcal{N(R)}$.
 }
+
+\begin{proof}
+	We have previously shown that if $x \in R$ is nilpotent then if $r$ is any element of $R$ that $rx$ and $xr$ are nilpotent.
+	This means that $r\mathcal{N}(R) \subset \mathcal{N}(R)$ and $\mathcal{N}(R)r \subset \mathcal{N}(R)$, and since the nilradical of $R$ is left and right ideal it is ideal.
+\end{proof}
 
 \prob{7.3.34}{Let $I$ and $J$ be ideals of $R$.}
 
 a) Prove that $I+J$ is the smallest ideal of $R$ containing both $I$ and $J$.
 
+\begin{proof}
+	First, we show that $I + J$ is ideal.
+	It is simple to show that this is a subring of $R$ since if $a,c \in I$ and $b,d \in J$, then $(a+b) - (c+d) = (a-c) + (b-d) \in I + J$.
+	Additionally, $(a+b)(c+d) = \underbrace{ac}_{\in I} + \underbrace{ad}_{\in I \cap J} + \underbrace{bc}_{\in I \cap J} + \underbrace{bd}_{\in J} \in I + J$.
+	Now $r(a + b) = \underbrace{ra}_{\in I} + \underbrace{rb}_{\in J} \in I + J$, and by a similar argument $(a+b)r \in I + J$.
+	
+	Next, we show that $I,J \subset I + J$.
+	Consider $a \in I$. It is clear that $a + 0 \in I + J$, meaning $a \in I + J$, and similarly $b \in J$ implies that $b \in I + J$.
+	
+	Finally, we show that if $K$ is ideal and $I,J \subset K$ that $I + J \subset K$. 
+	Let $x,y \in K$.
+	Then, $x + y \in K$.
+	If we let $x = a \in I$ and $y = b \in J$, then $x + y = a + b \in I + J$.
+	Thus, $I + J \subset K$.
+\end{proof}
+
 b) Prove that $IJ$ is an ideal contained in $I \cap J$.
+
+\begin{proof}
+	Recall that $IJ = \{ a_1b_1 + \ldots + a_nb_n | a_i \in I \text{ and } b_i \in J \}$.
+	Notice that $rab = rab \in IJ$ and $abr = abr \in IJ$.
+	It has been proven that $IJ$ is a subring of $R$.
+	
+	Now, we show that $IJ \subset I + J$.
+	Let $x \in IJ$.
+	Then $x = a_1b_1 + \ldots + a_nb_n$.
+	Since $I + J$ is an abelian additive group and $a_ib_i \in I \cap J$ since $I$ and $J$ are ideal, it follows that $x \in I + J$.
+\end{proof}
 
 c) Give an example where $IJ \ne I \cap J$.
 
 d) Prove that if $R$ is commutative and if $I + J = R$ then $IJ = I \cap J$.
+
+\begin{proof}
+	It has already been shown that $IJ \subset I \cap J$, so it remains to be shown that $I \cap J \subset IJ$.
+	Let $x \in I$ and $y \in J$ such that $x + y = 1$.
+	Now, let $z \in I \cap J$, then $z = z(x + y) = zx + zy \in IJ$.
+\end{proof}
 
 \end{document}
